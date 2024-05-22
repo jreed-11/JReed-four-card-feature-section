@@ -11,8 +11,6 @@
   --headings: hsl(234, 12%, 34%);
   --p-text: hsl(229, 6%, 66%);
   --bg-color: hsl(0, 0%, 98%);
-
-  /* Font Sizes & Weights */
 }
 
 *,
@@ -46,18 +44,6 @@ body {
   font-weight: 600;
 }
 
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas:
-    ". card--tbuild ."
-    "card--super card--tbuild card--calc"
-    "card--super card--karma card--calc"
-    ". card--karma .";
-  gap: 3rem;
-}
-
 .header-container {
   margin: 0 auto;
   max-width: 50.4rem;
@@ -75,10 +61,24 @@ body {
   margin-bottom: 6.4rem;
 }
 
+/* Card Styles  */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    ". card--tbuild ."
+    "card--super card--tbuild card--calc"
+    "card--super card--karma card--calc"
+    ". card--karma .";
+  gap: 3rem;
+}
+
 .card {
   background-color: white;
   border-radius: 5px 5px 0px 0px;
-  box-shadow: 0px 12px 5px -2px #d9e3ef;
+  box-shadow: 0px 11px 5px -2px #d9e3ef;
   padding: 3.2rem;
   text-align: left;
   max-width: 35rem;
@@ -119,4 +119,38 @@ body {
 .card--super {
   grid-area: card--super;
   border-top: 4px solid var(--cyan-border);
+}
+
+/* Media Queries */
+
+@media (max-width: 770px) {
+  .main-container {
+    padding-bottom: 7.8rem;
+    max-width: 31.1rem;
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    padding: 2.8rem;
+  }
+
+  .card-container :nth-child(1) {
+    order: 2;
+  }
+  .card-container :nth-child(2) {
+    order: 4;
+  }
+  .card-container :nth-child(3) {
+    order: 3;
+  }
+  .card-container :nth-child(4) {
+    order: 1;
+  }
+  .heading {
+    font-size: 2.5rem;
+  }
 }
