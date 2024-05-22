@@ -1,13 +1,18 @@
 :root {
   /* Primary Colors */
+
   --red-border: hsl(0, 78%, 62%);
   --cyan-border: hsl(180, 62%, 55%);
   --orange-border: hsl(34, 97%, 64%);
   --blue-border: hsl(212, 86%, 64%);
-  /* Netral Colors */
+
+  /* Netrual Colors */
+
   --headings: hsl(234, 12%, 34%);
   --p-text: hsl(229, 6%, 66%);
   --bg-color: hsl(0, 0%, 98%);
+
+  /* Font Sizes & Weights */
 }
 
 *,
@@ -22,50 +27,96 @@ html {
   font-size: 62.5%;
 }
 body {
+  background-color: var(--bg-color);
   font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-top: 8rem;
 }
 
 .main-container {
-  border: 2px solid red;
   margin: 0 auto;
-  max-width: 110rem;
+  max-width: 112rem;
 }
 
 .header-container {
   text-align: center;
 }
 
+.txt--bold {
+  font-weight: 600;
+}
+
 .card-container {
-  border: 1px solid blue;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-template-areas:
     ". card--tbuild ."
-    "card--calc card--tbuild card--karma"
-    "card--calc card--super card--karma"
-    ". card--super .";
+    "card--super card--tbuild card--calc"
+    "card--super card--karma card--calc"
+    ". card--karma .";
   gap: 3rem;
 }
 
+.header-container {
+  margin: 0 auto;
+  max-width: 50.4rem;
+}
+
+.heading {
+  color: var(--headings);
+  font-size: 3.6rem;
+  font-weight: 200;
+  margin-bottom: 1.6rem;
+}
+
+.intro__text {
+  font-size: 1.5rem;
+  margin-bottom: 6.4rem;
+}
+
 .card {
-  text-align: center;
+  background-color: white;
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0px 12px 5px -2px #d9e3ef;
+  padding: 3.2rem;
+  text-align: left;
+  max-width: 35rem;
+}
+
+.card__heading {
+  color: var(--headings);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.card__para {
+  margin: 0.6rem 0 4rem 0;
+}
+.para--text {
+  color: var(--p-text);
+}
+
+.card-img {
+  text-align: right;
 }
 
 .card--tbuild {
   grid-area: card--tbuild;
+  border-top: 4px solid var(--red-border);
 }
 
 .card--calc {
   grid-area: card--calc;
+  border-top: 4px solid var(--blue-border);
 }
 
 .card--karma {
   grid-area: card--karma;
+  border-top: 4px solid var(--orange-border);
 }
 
 .card--super {
   grid-area: card--super;
+  border-top: 4px solid var(--cyan-border);
 }
